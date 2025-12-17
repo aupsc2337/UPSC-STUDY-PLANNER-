@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f5f5;
+  color: #111;
+}
+
+.app-header {
+  background: #1a237e;
+  color: #fff;
+  padding: 12px 16px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.app-header p {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.tabs {
+  display: flex;
+  overflow-x: auto;
+  background: #283593;
+}
+
+.tabs button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #c5cae9;
+  padding: 10px 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background: #fff;
+  color: #1a237e;
+  font-weight: 600;
+}
+
+main {
+  padding: 12px;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+input, textarea, select, button {
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+input, textarea, select {
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #c5cae9;
+  flex: 1;
+  min-width: 0;
+}
+
+textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  background: #3949ab;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #303f9f;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+#timer-display {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 8px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  border-bottom: 1px solid #eee;
+  padding: 6px 0;
+  font-size: 0.9rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  background: #e8eaf6;
+  color: #1a237e;
+  margin-left: 4px;
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UPSC Study Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1a237e" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>UPSC Study Planner</h1>
+    <p>Dashboard · Planner · MCQs · Syllabus · Notes</p>
+  </header>
+
+  <nav class="tabs">
+    <button data-tab="dashboard" class="active">Dashboard</button>
+    <button data-tab="planner">Planner & Timer</button>
+    <button data-tab="mcq">MCQ / Quiz</button>
+    <button data-tab="syllabus">Syllabus</button>
+    <button data-tab="notes">Notes</button>
+  </nav>
+
+  <main>
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="tab active">
+      <h2>Dashboard</h2>
+      <div class="stats-grid">
+        <div class="card">
+          <h3>Prelims</h3>
+          <p id="prelims-progress">0% complete</p>
+        </div>
+        <div class="card">
+          <h3>Mains</h3>
+          <p id="mains-progress">0% complete</p>
+        </div>
+        <div class="card">
+          <h3>Optional</h3>
+          <p id="optional-progress">0% complete</p>
+        </div>
+        <div class="card">
+          <h3>Today&apos;s Focus</h3>
+          <p id="today-focus">0 min</p>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Today&apos;s Sessions</h3>
+        <ul id="today-sessions"></ul>
+      </div>
+    </section>
+
+    <!-- PLANNER & TIMER -->
+    <section id="planner" class="tab">
+      <h2>Planner & Timer</h2>
+
+      <div class="card">
+        <h3>Add Study Session</h3>
+        <div class="form-row">
+          <input id="session-subject" placeholder="Subject (e.g. Polity)" />
+          <input id="session-topic" placeholder="Topic (e.g. FR/FD)" />
+        </div>
+        <div class="form-row">
+          <input id="session-date" type="date" />
+          <input id="session-start" type="time" />
+          <input id="session-duration" type="number" placeholder="Minutes" />
+        </div>
+        <button id="add-session">Add Session</button>
+      </div>
+
+      <div class="card">
+        <h3>Sessions</h3>
+        <ul id="sessions-list"></ul>
+      </div>
+
+      <div class="card">
+        <h3>Focus Timer</h3>
+        <div id="timer-display">00:00</div>
+        <div class="form-row">
+          <input id="focus-minutes" type="number" placeholder="Focus minutes (e.g. 50)" />
+          <input id="break-minutes" type="number" placeholder="Break minutes (e.g. 10)" />
+        </div>
+        <button id="start-timer">Start Focus</button>
+        <button id="stop-timer">Stop</button>
+        <p id="current-task-name">No task selected.</p>
+      </div>
+    </section>
+
+    <!-- MCQ / QUIZ -->
+    <section id="mcq" class="tab">
+      <h2>MCQ / Quiz</h2>
+
+      <div class="card">
+        <h3>Add MCQ</h3>
+        <textarea id="mcq-question" placeholder="Question"></textarea>
+        <input id="mcq-option-a" placeholder="Option A" />
+        <input id="mcq-option-b" placeholder="Option B" />
+        <input id="mcq-option-c" placeholder="Option C" />
+        <input id="mcq-option-d" placeholder="Option D" />
+        <input id="mcq-answer" placeholder="Correct (A/B/C/D)" />
+        <input id="mcq-subject" placeholder="Subject (e.g. Polity)" />
+        <textarea id="mcq-explanation" placeholder="Explanation / Source"></textarea>
+        <button id="add-mcq">Save MCQ</button>
+      </div>
+
+      <div class="card">
+        <h3>Practice Quiz</h3>
+        <button id="start-quiz">Start 10-question Quiz</button>
+        <div id="quiz-area"></div>
+      </div>
+    </section>
+
+    <!-- SYLLABUS -->
+    <section id="syllabus" class="tab">
+      <h2>Syllabus & Checklist</h2>
+
+      <div class="card">
+        <h3>Add Syllabus Topic</h3>
+        <div class="form-row">
+          <select id="syllabus-paper">
+            <option value="Prelims GS">Prelims GS</option>
+            <option value="Prelims CSAT">Prelims CSAT</option>
+            <option value="Mains GS1">Mains GS1</option>
+            <option value="Mains GS2">Mains GS2</option>
+            <option value="Mains GS3">Mains GS3</option>
+            <option value="Mains GS4">Mains GS4</option>
+            <option value="Optional">Optional</option>
+          </select>
+          <input id="syllabus-topic" placeholder="Topic (e.g. Parliament)" />
+        </div>
+        <button id="add-syllabus">Add Topic</button>
+      </div>
+
+      <div class="card">
+        <h3>Topics</h3>
+        <ul id="syllabus-list"></ul>
+      </div>
+    </section>
+
+    <!-- NOTES -->
+    <section id="notes" class="tab">
+      <h2>Notes</h2>
+
+      <div class="card">
+        <h3>Add Note</h3>
+        <input id="note-title" placeholder="Title (e.g. FR Article 14–18)" />
+        <input id="note-tag" placeholder="Tag (subject/topic)" />
+        <textarea id="note-body" placeholder="Write your notes here"></textarea>
+        <button id="add-note">Save Note</button>
+      </div>
+
+      <div class="card">
+        <h3>All Notes</h3>
+        <input id="note-search" placeholder="Search notes..." />
+        <ul id="notes-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
